@@ -16,19 +16,15 @@ public class User {
     private Long id;
 
     @NotBlank
-    @Size(min = 2, max = 30, message = "크기가 2에서 30 사이여야 합니다")
-    private String username;
-
-    @NotBlank
     @Size(min = 2, max = 50, message = "크기가 2에서 50 사이여야 합니다")
     private String name;
+
+    @Email(message = "Email should be valid")
+    private String email;
 
     @NotBlank
     @Size(min = 6, max = 100, message = "크기가 6에서 100 사이여야 합니다")
     private String password;
-
-    @Email(message = "Email should be valid")
-    private String email;
 
     @NotBlank // 공백이 아닌 값 요구
     @Pattern(regexp = "^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$", message = "유효한 전화번호 형식이어야 합니다") //전화번호 형식 검사
